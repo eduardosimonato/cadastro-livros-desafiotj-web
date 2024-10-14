@@ -84,20 +84,22 @@ export class LivrosComponent implements OnInit{
   }
 
   excluirLivro(id: number) {
-    this.livrosServices.deleteLivro(id).subscribe(() => {
-      console.log('Livro excluído: ' + id);
-      this.successMessage = 'Livro excluído com sucesso!';
-      this.getLivros();
-      setTimeout(() => {
-        this.successMessage = null;
-      }, 5000);
-    }, error => {
-      this.errorMessage = 'Erro ao excluir livro. Tente novamente.';
-      console.error('Erro ao excluir livro', error);
-      setTimeout(() => {
-        this.errorMessage = null; 
-      }, 5000);
-    });
+    if (confirm('Tem certeza que deseja excluir este livro?')) {
+      this.livrosServices.deleteLivro(id).subscribe(() => {
+        console.log('Livro excluído: ' + id);
+        this.successMessage = 'Livro excluído com sucesso!';
+        this.getLivros();
+        setTimeout(() => {
+          this.successMessage = null;
+        }, 5000);
+      }, error => {
+        this.errorMessage = 'Erro ao excluir livro. Tente novamente.';
+        console.error('Erro ao excluir livro', error);
+        setTimeout(() => {
+          this.errorMessage = null; 
+        }, 5000);
+      });
+    }
   }
 
   getLivros() {
