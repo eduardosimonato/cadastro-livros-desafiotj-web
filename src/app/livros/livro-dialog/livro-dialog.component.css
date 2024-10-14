@@ -1,0 +1,19 @@
+.form-field-spacing {
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  .custom-button {
+    background-color: #6200ea; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    padding: 8px 16px; /* Espaçamento interno */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+  }
+  
+  .custom-button:hover {
+    background-color: #3700b3; /* Cor ao passar o mouse */
+  } 
+
+  .button-spacing {
+    margin-right: 8px; /* Espaço à direita do botão */
+  }

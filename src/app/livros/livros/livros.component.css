@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+  }
+
+  .button-spacing {
+    margin-left: 10px; 
+  }
+
+  .custom-button {
+    border: 1px solid #6200ea; /* Cor da borda */
+    border-radius: 4px; /* Bordas arredondadas */
+    padding: 8px 16px; /* Ajuste o padding conforme necessário */
+    background-color: transparent; /* Fundo transparente */
+    color: #6200ea; /* Cor do texto */
+    transition: background-color 0.3s, color 0.3s; /* Efeitos de transição */
+  }
+  
+  .custom-button:hover {
+    background-color: #6200ea; /* Cor de fundo ao passar o mouse */
+    color: white; /* Cor do texto ao passar o mouse */
+  }
+
+  .alert {
+    position: fixed; /* Fixa a div na tela */
+    bottom: 20px; /* Distância do fundo da tela */
+    right: 20px; /* Distância da direita da tela */
+    z-index: 1000; /* Garante que a div fique acima de outros elementos */
+    margin: 10px; /* Adiciona uma margem se necessário */
+  }

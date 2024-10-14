@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>{{ livro._id ? 'Editar Livro' : 'Adicionar Livro' }}</h2>
+<mat-dialog-content>
+  
+  <mat-form-field class="form-field-spacing">
+    <mat-label>Título</mat-label>
+    <input matInput [(ngModel)]="livro.titulo" [readonly]="!isEditMode" required>
+  </mat-form-field>
+
+  <mat-form-field class="form-field-spacing">
+    <mat-label>Assuntos</mat-label>
+    <mat-select [(ngModel)]="livro.assuntos" [disabled]="!isEditMode" multiple></mat-select>
+  </mat-form-field>
+  
+  <mat-form-field class="form-field-spacing">
+    <mat-label>Editora</mat-label>
+    <input matInput [(ngModel)]="livro.editora" [readonly]="!isEditMode" required>
+  </mat-form-field>
+
+  <mat-form-field class="form-field-spacing">
+    <mat-label>Edição</mat-label>
+    <input matInput [(ngModel)]="livro.edicao" type="number" [readonly]="!isEditMode" required>
+  </mat-form-field>
+
+  <mat-form-field class="form-field-spacing">
+    <mat-label>Ano de Publicação</mat-label>
+    <input matInput [(ngModel)]="livro.anopublicacao" maxlength="4" [readonly]="!isEditMode" (keydown)="allowOnlyNumbers($event)" required>
+  </mat-form-field>
+
+  <mat-form-field class="form-field-spacing">
+    <mat-label>Autores</mat-label>
+    <mat-select [(ngModel)]="livro.autores" [disabled]="!isEditMode" multiple></mat-select>
+  </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-raised-button (click)="onCancel()" class="custom-button button-spacing">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="onSave()" [disabled]="!isEditMode" class="custom-button button-spacing">Salvar</button>
+</mat-dialog-actions>
